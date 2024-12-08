@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cricket Game</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #4caf50, #2e7d32);
+      color: white;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      margin: 20px 0;
+      font-size: 2.5em;
+    }
+    .game-container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    .buttons-container {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    button {
+      background: #ffffff;
+      border: 2px solid #2e7d32;
+      border-radius: 10px;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.3s;
+    }
+    button:hover {
+      background: #2e7d32;
+      color: white;
+      transform: scale(1.1);
+    }
+    button:active {
+      transform: scale(0.95);
+    }
+    #result {
+      margin-top: 30px;
+      font-size: 1.5em;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Bat Ball Stump Game</h1>
+<div class="game-container">
+  <p>Choose one to start the game:</p>
+  <div class="buttons-container">
+    <button onclick="playGame('Bat')">🏏 Bat</button>
+    <button onclick="playGame('Ball')">🏐 Ball</button>
+    <button onclick="playGame('Stump')">🪵 Stump</button>
+  </div>
+  <div id="result"></div>
+</div>
+
+<script>
+  function playGame(userChoice) {
+    // Generate computer's choice
+    const randomNumber = Math.random() * 3;
+    let computerChoice;
+
+    if (randomNumber <= 1) {
+      computerChoice = 'Bat';
+    } else if (randomNumber <= 2) {
+      computerChoice = 'Ball';
+    } else {
+      computerChoice = 'Stump';
+    }
+
+    // Determine result
+    let resultMsg;
+    if (userChoice === computerChoice) {
+      resultMsg = "It's a tie!";
+    } else if (
+      (userChoice === 'Bat' && computerChoice === 'Ball') ||
+      (userChoice === 'Ball' && computerChoice === 'Stump') ||
+      (userChoice === 'Stump' && computerChoice === 'Bat')
+    ) {
+      resultMsg = "🎉 You won!";
+    } else {
+      resultMsg = "💻 Computer won!";
+    }
+
+    // Display result dynamically
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = `
+      <p>Your choice: <strong>${userChoice}</strong></p>
+      <p>Computer's choice: <strong>${computerChoice}</strong></p>
+      <p>Result: <strong>${resultMsg}</strong></p>
+    `;
+  }
+</script>
+
+</body>
+</html>

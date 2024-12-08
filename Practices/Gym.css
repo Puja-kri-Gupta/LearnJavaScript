@@ -1,0 +1,88 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+  background: url('gym-hero.jpg') no-repeat center center/cover;
+  color: white;
+  padding: 4rem 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero p {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: #0077b6;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+.cta-button:hover {
+  background: #005f73;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  background: #0077b6;
+  padding: 1rem;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+section {
+  padding: 2rem;
+  text-align: center;
+}
+
+.membership-cards,
+.trainer-profiles {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.card,
+.profile {
+  background: #f4f4f4;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #0077b6;
+  color: white;
+}
